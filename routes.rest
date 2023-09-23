@@ -1,6 +1,20 @@
 # LOCALHOST
+### GET
+http://localhost:8080
 
-http://localhost:3000
+### GET
+http://localhost:8080/contacts
 
-http://localhost:3000/contacts
+### GET Paul
+http://localhost:8080/contacts/650e324d7801f348ea40b3c3
 
+### GET Gabby
+http://localhost:8080/contacts/650e323d7801f348ea40b3c0
+
+### GET Lydia
+http://localhost:8080/contacts/650e32427801f348ea40b3c1
+
+### GET Millie
+http://localhost:8080/contacts/650e32487801f348ea40b3c2
+
+ 
