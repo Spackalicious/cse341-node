@@ -8,11 +8,8 @@ const getContacts = async (req, res, next) => {
     }); 
 };
 
-// const lesson2Test = (req, res) => {
-//     res.send("Test 2 Complete!");
-// };
+// still need to make single contact return
 
 module.exports = { 
     getContacts
-    // , lesson2Test 
 };
