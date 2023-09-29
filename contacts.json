@@ -1,0 +1,30 @@
+{
+    "gabby": {
+      "firstName": "Gabby",
+      "lastName": "Spackman",
+      "email": "gabby@email.com",
+      "favoriteColor": "blue",
+      "birthday": "January 1"
+    },
+    "lydia": {
+      "firstName": "Lydia",
+      "lastName": "Spackman",
+      "email": "lydia@email.com",
+      "favoriteColor": "blue",
+      "birthday": "February 14"
+    },
+    "millie": {
+      "firstName": "Millie",
+      "lastName": "Spackman",
+      "email": "millie@email.com",
+      "favoriteColor": "blue",
+      "birthday": "July 4"
+    },
+    "paul": {
+      "firstName": "Paul",
+      "lastName": "Spackman",
+      "email": "paul@email.com",
+      "favoriteColor": "blue",
+      "birthday": "April 1"
+    }
+  }

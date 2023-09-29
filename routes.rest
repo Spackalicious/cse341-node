@@ -2,19 +2,126 @@
 ### GET
 http://localhost:8080
 
-### GET
+### GET all contacts
 http://localhost:8080/contacts
 
-### GET Paul
+### DELETE contact (duplicate route because I'm being lazy!)
+DELETE http://localhost:8080/contacts/651646414c095ebfe4aa67ef HTTP/1.1
+
+### GET Paul (contact by id)
 http://localhost:8080/contacts/650e324d7801f348ea40b3c3
 
-### GET Gabby
+### GET Gabby (contact by id)
 http://localhost:8080/contacts/650e323d7801f348ea40b3c0
 
-### GET Lydia
+### GET Lydia (contact by id)
 http://localhost:8080/contacts/650e32427801f348ea40b3c1
 
-### GET Millie
+### GET Millie (contact by id)
 http://localhost:8080/contacts/650e32487801f348ea40b3c2
 
- 
+### GET newest contact by id
+http://localhost:8080/contacts/6515079af0a7ee42f419ab61
+
+### CREATE CONTACT
+POST http://localhost:8080/contacts HTTP/1.1
+content-type: application/json
+
+{
+    "firstName":"Shirley",
+    "lastName":"Temple",
+    "email":"shirley@fakeEmail.com",
+    "favoriteColor":"pink",
+    "birthday":"01/01/1900"
+}
+
+### CREATE CONTACT !!!INCOMPLETE!!!
+POST http://localhost:8080/contacts HTTP/1.1
+content-type: application/json
+
+{
+    "firstName":"Shirley",
+    "email":"shirley@fakeEmail.com",
+    "favoriteColor":"pink",
+    "birthday":"01/01/1900"
+}
+
+### PUT contact (edit Gabby by id)
+PUT http://localhost:8080/contacts/650e323d7801f348ea40b3c0 HTTP/1.1
+content-type: application/json
+
+{
+    "firstName":"Gabby",
+    "lastName":"Spackman",
+    "email":"gabby@email.com",
+    "favoriteColor":"blue",
+    "birthday":"10/10/2010"
+}
+
+### DELETE contact 
+DELETE http://localhost:8080/contacts/6516270d8e6db5da26c485c1 HTTP/1.1
+
+
+
+
+# ---------------------------------------------------------------------------
+#  PRODUCTION ---------------------------------------------------------------
+# ---------------------------------------------------------------------------
+### GET
+https://juliespackman-cse341-spring23.onrender.com/
+
+### GET
+https://juliespackman-cse341-spring23.onrender.com/contacts
+
+### GET Paul
+https://juliespackman-cse341-spring23.onrender.com/contacts/650e324d7801f348ea40b3c3
+
+### GET Gabby
+https://juliespackman-cse341-spring23.onrender.com/contacts/650e323d7801f348ea40b3c0
+
+### GET Lydia
+https://juliespackman-cse341-spring23.onrender.com/contacts/650e32427801f348ea40b3c1
+
+### GET Millie
+https://juliespackman-cse341-spring23.onrender.com/contacts/650e32487801f348ea40b3c2
+
+
+
+### CREATE CONTACT
+POST http://juliespackman-cse341-spring23.onrender.com/contacts HTTP/1.1
+content-type: application/json
+{
+    "firstName":"Jane",
+    "lastName":"Doe",
+    "email":"jane@doe.com",
+    "favoriteColor":"purple",
+    "birthday":"01/01/2001"
+}
+
+### CREATE CONTACT !!!INCOMPLETE!!!
+POST http://juliespackman-cse341-spring23.onrender.com/contacts HTTP/1.1
+content-type: application/json
+
+{
+    "firstName":"Shirley",
+    "email":"shirley@fakeEmail.com",
+    "favoriteColor":"pink",
+    "birthday":"01/01/1900"
+}
+
+### PUT contact (edit Gabby by id)
+PUT http://juliespackman-cse341-spring23.onrender.com/contacts/650e323d7801f348ea40b3c0 HTTP/1.1
+content-type: application/json
+
+{
+    "firstName":"Gabby",
+    "lastName":"Spackman",
+    "email":"gabby@email.com",
+    "favoriteColor":"purple",
+    "birthday":"10/10/2010"
+}
+
+
+### DELETE contact (delete by id)
+DELETE http://juliespackman-cse341-spring23.onrender.com/contacts/650e324d7801f348ea40b3c3 HTTP/1.1
+

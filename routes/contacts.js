@@ -5,9 +5,17 @@ routes.get('/', contactsController.blankMsg);
 routes.get('/contacts', contactsController.getContacts);
 routes.get('/contacts/:id', contactsController.getIndividual);
 
-// there needs to be a route to call all of my contacts
-// there needs to be a route to retrieve single contacts by ID entered in the URL
+// routes.get('/', contactsController.getContacts);
+// routes.get('/:id', contactsController.getIndividual);
 
-// when each of those is accessed, call the route through the controllers, thru contacts.js 
+// routes.post('/', contactsController.newContact);
+routes.post('/contacts', contactsController.newContact);
+
+// routes.put('/:id', contactsController.updateContact);
+routes.put('/contacts/:id', contactsController.updateContact);
+
+// routes.delete('/:id', contactsController.removeContact);
+routes.delete('/contacts/:id', contactsController.removeContact);
+// routes.delete('/:id', contactsController.removeContact);
 
 module.exports = routes;

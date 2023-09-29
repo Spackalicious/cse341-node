@@ -19,7 +19,8 @@ app
 // app.listen(port);
 // console.log('Web Server is listening at port ' + (port));
 
-mongodb.initDb((err, mongodb) => {
+// mongodb.initDb((err, mongodb) => {
+mongodb.initDb((err) => {
     if (err) {
         console.log(err);
     } else {
