@@ -54,12 +54,12 @@ content-type: application/json
     "firstName":"Gabby",
     "lastName":"Spackman",
     "email":"gabby@email.com",
-    "favoriteColor":"blue",
+    "favoriteColor":"teal",
     "birthday":"10/10/2010"
 }
 
 ### DELETE contact 
-DELETE http://localhost:8080/contacts/6516270d8e6db5da26c485c1 HTTP/1.1
+DELETE http://localhost:8080/contacts/6516493872e6cd7c16895227 HTTP/1.1
 
 
 
@@ -67,10 +67,10 @@ DELETE http://localhost:8080/contacts/6516270d8e6db5da26c485c1 HTTP/1.1
 # ---------------------------------------------------------------------------
 #  PRODUCTION ---------------------------------------------------------------
 # ---------------------------------------------------------------------------
-### GET
+### GET blank message
 https://juliespackman-cse341-spring23.onrender.com/
 
-### GET
+### GET all contacts
 https://juliespackman-cse341-spring23.onrender.com/contacts
 
 ### GET Paul
@@ -88,14 +88,15 @@ https://juliespackman-cse341-spring23.onrender.com/contacts/650e32487801f348ea40
 
 
 ### CREATE CONTACT
-POST http://juliespackman-cse341-spring23.onrender.com/contacts HTTP/1.1
+POST https://juliespackman-cse341-spring23.onrender.com/contacts HTTP/1.1
 content-type: application/json
+
 {
-    "firstName":"Jane",
-    "lastName":"Doe",
-    "email":"jane@doe.com",
-    "favoriteColor":"purple",
-    "birthday":"01/01/2001"
+    "firstName":"Shirley",
+    "lastName":"Temple",
+    "email":"shirley@render.com",
+    "favoriteColor":"pink",
+    "birthday":"01/01/1900"
 }
 
 ### CREATE CONTACT !!!INCOMPLETE!!!
@@ -123,5 +124,5 @@ content-type: application/json
 
 
 ### DELETE contact (delete by id)
-DELETE http://juliespackman-cse341-spring23.onrender.com/contacts/650e324d7801f348ea40b3c3 HTTP/1.1
+DELETE http://juliespackman-cse341-spring23.onrender.com/contacts/65164c8772e6cd7c16895228 HTTP/1.1
 

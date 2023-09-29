@@ -31,29 +31,6 @@ const getIndividual = async (req, res) => {
     });
   };
 
-// const newContact = async (req, res) => {
-//   const contact = {
-//     firstName: req.body.firstName, 
-//     lastName: req.body.lastName, 
-//     email: req.body.email, 
-//     favoriteColor: req.body.favoriteColor, 
-//     birthday: req.body.birthday
-//   };
-//   const validated = await userSchema.validateAsync(contact);
-//   const response = await mongodb
-//     .getDb()
-//     .db()
-//     .collection('contacts')
-//     .insertOne(validated);
-//   if (response.acknowledged) {
-//     res.status(201).json(response);
-//     console.log(`${contact.firstName} ${contact.lastName} successfully created!`);
-//   } else {
-//     res.status(500).json(response.error || `An error occured while trying to create ${contact.firstName} ${contact.lastName}.`);
-//     console.log(`An error occured while trying to create ${contact.firstName} ${contact.lastName}.`);
-//   }
-// };
-
 const newContact = async (req, res) => {
   const contact = {
     firstName: req.body.firstName, 
@@ -79,11 +56,6 @@ const newContact = async (req, res) => {
     res.send(`Missing some data. \n${error}\nPlease try again.`);
   }
 }
-  //  else {
-  //   res.status(500).json(response.error || `An error occured while trying to create ${contact.firstName} ${contact.lastName}.`);
-  //   console.log(`An error occured while trying to create ${contact.firstName} ${contact.lastName}.`);
-  // }
-// };
 
 const updateContact = async (req, res) => {
   const userId = new ObjectId(req.params.id);
@@ -102,7 +74,7 @@ const updateContact = async (req, res) => {
   console.log(response);
   if (response.modifiedCount > 0) {
     res.status(204).send();
-    console.log(`${contact.firstName} ${contact.lastName} successfully updated, status code 204`);
+    console.log(`${contact.firstName} ${contact.lastName} successfully updated`);
   } else {
     res.status(500).json(response.error || `An error occured while trying to update ${contact.firstName} ${contact.lastName}.`);
     console.log(`An error occured while trying to update ${contact.firstName} ${contact.lastName}.`);
