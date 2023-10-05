@@ -5,7 +5,7 @@ const mongodb = require('./db/connect');
 
 const port = process.env.PORT || 8080;
 const app = express();
-// const cors = require('cors');
+const cors = require('cors');
 
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger.json');
@@ -17,7 +17,7 @@ app
         next();
     })
     .use('/', require('./routes'))
-//  .use(cors());
+    .use(cors())
     .use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
  
 // app.listen(port);

@@ -7,18 +7,23 @@ const blankMsg = (req, res) => {
 };
 
 const getContacts = async (req, res) => {
+  try {
     const result = await mongodb
-        .getDb()
-        .db()
-        .collection('contacts')
-        .find();
+      .getDb()
+      .db()
+      .collection('contacts')
+      .find();
     result.toArray().then((lists) => {
         res.setHeader('Content-Type', 'application/json');
         res.status(200).json(lists); 
     }); 
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }    
 };
 
 const getIndividual = async (req, res) => {
+  try {
     const contactId = new ObjectId(req.params.id);
     const result = await mongodb
       .getDb()
@@ -29,7 +34,10 @@ const getIndividual = async (req, res) => {
       res.setHeader('Content-Type', 'application/json');
       res.status(200).json(lists[0]);
     });
-  };
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }    
+};
 
 const newContact = async (req, res) => {
   const contact = {
@@ -58,42 +66,50 @@ const newContact = async (req, res) => {
 }
 
 const updateContact = async (req, res) => {
-  const userId = new ObjectId(req.params.id);
-  const contact = {
-    firstName: req.body.firstName, 
-    lastName: req.body.lastName, 
-    email: req.body.email, 
-    favoriteColor: req.body.favoriteColor, 
-    birthday: req.body.birthday
-  };
-  const response = await mongodb
-    .getDb()
-    .db()
-    .collection('contacts')
-    .replaceOne({ _id: userId }, contact);
-  console.log(response);
-  if (response.modifiedCount > 0) {
-    res.status(204).send();
-    console.log(`${contact.firstName} ${contact.lastName} successfully updated`);
-  } else {
-    res.status(500).json(response.error || `An error occured while trying to update ${contact.firstName} ${contact.lastName}.`);
-    console.log(`An error occured while trying to update ${contact.firstName} ${contact.lastName}.`);
+  try {
+    const userId = new ObjectId(req.params.id);
+    const contact = {
+      firstName: req.body.firstName, 
+      lastName: req.body.lastName, 
+      email: req.body.email, 
+      favoriteColor: req.body.favoriteColor, 
+      birthday: req.body.birthday
+    };
+    const response = await mongodb
+      .getDb()
+      .db()
+      .collection('contacts')
+      .replaceOne({ _id: userId }, contact);
+    console.log(response);
+    if (response.modifiedCount > 0) {
+      res.status(204).send();
+      console.log(`${contact.firstName} ${contact.lastName} successfully updated`);
+    } else {
+      res.status(500).json(response.error || `An error occured while trying to update ${contact.firstName} ${contact.lastName}.`);
+      console.log(`An error occured while trying to update ${contact.firstName} ${contact.lastName}.`);
+    }
+  } catch (err) {
+    res.status(500).json({ message: err.message });
   }
 };
 
 const removeContact = async (req, res) => {
-  const contactId = new ObjectId(req.params.id);
-  const delResponse = await mongodb
-    .getDb()
-    .db()
-    .collection('contacts')
-    .deleteOne({_id: contactId});
-    console.log(delResponse);
-    if (delResponse.deletedCount > 0 ) {
-      res.status(200).send();
-      console.log('Contact successfully deleted');
-    } else {
-      res.status(500).json(delResponse.error || 'An error occured while trying to remove the contact.');
+  try {
+    const contactId = new ObjectId(req.params.id);
+    const delResponse = await mongodb
+      .getDb()
+      .db()
+      .collection('contacts')
+      .deleteOne({_id: contactId});
+      console.log(delResponse);
+      if (delResponse.deletedCount > 0 ) {
+        res.status(200).send();
+        console.log('Contact successfully deleted');
+      } else {
+        res.status(500).json(delResponse.error || 'An error occured while trying to remove the contact.');
+      }
+    } catch (err) {
+      res.status(500).json({ message: err.message });
     }
 };
 
