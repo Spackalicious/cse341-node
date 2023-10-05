@@ -118,11 +118,11 @@ content-type: application/json
     "firstName":"Gabby",
     "lastName":"Spackman",
     "email":"gabby@email.com",
-    "favoriteColor":"purple",
+    "favoriteColor":"red",
     "birthday":"10/10/2010"
 }
 
 
 ### DELETE contact (delete by id)
-DELETE http://juliespackman-cse341-spring23.onrender.com/contacts/65164c8772e6cd7c16895228 HTTP/1.1
+DELETE http://juliespackman-cse341-spring23.onrender.com/contacts/6516500fad283aaeda7a9acf HTTP/1.1
 
