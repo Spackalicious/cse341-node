@@ -5,12 +5,13 @@ const doc = {
     title: 'Julie\'s Contacts API',
     description: 'CSE341 Contacts Project',
   },
-  host: 'localhost:8080',
+  // host: 'localhost:8080',
+  host: 'https://juliespackman-cse341-spring23.onrender.com',
   schemes: ['http'],
 };
 
 const outputFile = './swagger.json';
-const endpointsFiles = ['./routes/server.js'];
+const endpointsFiles = ['./routes/index.js'];
 
 /* NOTE: if you use the express Router, you must pass in the 
    'endpointsFiles' only the root file where the route starts,
