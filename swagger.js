@@ -6,7 +6,7 @@ const doc = {
     description: 'CSE341 Contacts Project',
   },
   // host: 'localhost:8080',
-  host: 'https://juliespackman-cse341-spring23.onrender.com',
+  host: 'juliespackman-cse341-spring23.onrender.com',
   schemes: ['http'],
 };
 
