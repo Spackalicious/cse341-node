@@ -1,16 +1,26 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "Julie's Contacts API",
+    "title": "My Contacts API",
     "description": "CSE341 Contacts Project",
     "version": "1.0.0"
   },
-  "host": "localhost:8080",
+  "host": "https://juliespackman-cse341-spring23.onrender.com",
   "basePath": "/",
   "schemes": [
     "http"
   ],
   "paths": {
+    "/api-docs": {
+      "get": {
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
     "/contacts/": {
       "get": {
         "description": "",
@@ -146,16 +156,6 @@
           },
           "500": {
             "description": "Internal Server Error"
-          }
-        }
-      }
-    },
-    "/api-docs": {
-      "get": {
-        "description": "",
-        "responses": {
-          "default": {
-            "description": ""
           }
         }
       }
