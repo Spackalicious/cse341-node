@@ -8,7 +8,6 @@
   "host": "juliespackman-cse341-spring23.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http",
     "https"
   ],
   "paths": {
