@@ -8,6 +8,7 @@ const doc = {
   // host: 'localhost:8080',
   host: 'juliespackman-cse341-spring23.onrender.com',
   schemes: ['https'],
+  // schemes: ['http']
 };
 
 const outputFile = './swagger.json';
